@@ -5,8 +5,9 @@ RUN mkdir -p /run/apache2
 RUN sed -i 's/Listen 80/Listen 1100/g' /etc/apache2/httpd.conf
 RUN sed -i 's/#ServerName/ServerName/g' /etc/apache2/httpd.conf
 
-# nie działa CMD, ale jak się manualnie wpisze tę komendę to śmiga. Dlaczego?
-#CMD ["exec", "/usr/sbin/httpd", "-D", "FOREGROUND"]
+COPY start.sh .
+CMD ["/bin/sh", "start.sh"]
+# CMD ["exec", "/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 
 # FROM ubuntu:latest
