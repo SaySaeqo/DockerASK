@@ -1,18 +1,35 @@
-FROM ubuntu:latest
+FROM alpine:latest
+RUN apk update
+RUN apk add apache2 --no-cache
+RUN mkdir -p /run/apache2
+RUN sed -i 's/Listen 80/Listen 1100/g' /etc/apache2/httpd.conf
+RUN sed -i 's/#ServerName/ServerName/g' /etc/apache2/httpd.conf
 
-RUN /bin/bash
-RUN apt update
-RUN apt install systemctl -y
-RUN apt install net-tools -y
-RUN apt install iputils-ping -y
+# nie działa CMD, ale jak się manualnie wpisze tę komendę to śmiga. Dlaczego?
+#CMD ["exec", "/usr/sbin/httpd", "-D", "FOREGROUND"]
 
-RUN apt install apache2 -y
-RUN update-rc.d apache2 defaults
-RUN systemctl start apache2
 
-# WORKDIR /
+# FROM ubuntu:latest
 
-# COPY test.sh .
-# RUN ./test.sh
+# RUN /bin/bash
+# RUN apt update
+# # RUN apt install systemctl -y
+# # RUN apt install net-tools -y
+# # RUN apt install iputils-ping -y
 
-CMD ["ifconfig"]
+# RUN apt install apache2 -y
+# RUN apt install service -y
+
+# RUN sed -i 's/Listen 80/Listen 1100/g' /etc/apache2/ports.conf
+# # RUN update-rc.d apache2 defaults
+
+# CMD ["service", "apache2", "start"]
+# # CMD ["systemctl", "start", "apache2"]
+
+# # WORKDIR /
+
+# # COPY test.sh .
+# # RUN ./test.sh
+
+# # CMD ["ls"]
+# # CMD ["ping","google.com"]
