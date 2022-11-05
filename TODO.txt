@@ -1,10 +1,3 @@
 1. Dodać entrypoint na /bin/bash
 2. Całkowicie automatyczny skrypt do ustawiania również port forwardingu.
 3. Spisanie wszystkiego w readme.
-potrzebny jeszcze awall i shorewall, ale chyba okazuje sie, że nie trzeba, 
-to jest ta sama kategoria technologii, mozna wybrac jedno
-jeszcze openrc
-first open server_a so it will have goodd ip
-TODO zrobic dobre ip w port forwarding
-su -l root w skrypcie startującym
-zmiana nazwy maszyny, albo wyswietlanie w konsoli informacji co to z maszyna
