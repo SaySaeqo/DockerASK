@@ -3,7 +3,3 @@
 3. Spisanie wszystkiego w readme.
 
 apache2 autostart
-iptables
-2 interfejs
-konfiguracja reczna sieci wewnetrznej
-pierwszy interfejs z dhcp
