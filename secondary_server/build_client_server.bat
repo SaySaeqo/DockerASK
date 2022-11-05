@@ -1,2 +1,2 @@
-docker build -t myapache .
-docker run -d --name secondary_main myapache
+docker build -t apache_secondary .
+docker run -d --name secondary_main apache_secondary
