@@ -5,4 +5,5 @@ RUN apt-get install -y apache2
 #RUN mkdir -p /run/apache2
 RUN sed -i "s/Listen 80/Listen $PORT_ARG/g" /etc/apache2/ports.conf
 
+CMD [ "/bin/bash" ]
 #CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
