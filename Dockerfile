@@ -11,3 +11,5 @@ RUN apk add --no-cache bash
 RUN apk add --no-cache su-exec
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+
+#blablabal zmiana
