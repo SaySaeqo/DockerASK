@@ -3,9 +3,10 @@
 They are connected.
 
 ### Run help.
-1. Run batch script.
-2. Type **localhost/www_server** in your browser.
-3. Et voila.
+1. Run Docker Desktop.
+2. Run batch script.
+3. Type **localhost/www_server** in your browser.
+4. Et voila.
 
 ### More services.
 If you want to add more services servers to the network and forward to them by nginx reverse proxy you need to add them **manually** in **/etc/nginx/conf.d/default.conf**.
