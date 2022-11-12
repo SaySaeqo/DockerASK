@@ -1,0 +1,12 @@
+# Use const version of Ubuntu in case future versions won't be able to do sth from the bottom.
+FROM ubuntu:22.10
+RUN apt-get update
+RUN apt-get install -y apache2
+RUN apt-get install -y systemctl
+RUN apt-get install -y nano
+RUN apt-get install -y net-tools
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
+RUN sed -i "s/Listen 80/Listen 8080/g" /etc/apache2/ports.conf
+
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
